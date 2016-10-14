@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// 2016 - Damien Mayance (@Valryon)
+// Source: https://github.com/valryon/water2d-unity/
+using UnityEngine;
 
 /// <summary>
 /// Water surface script (update the shader properties).
