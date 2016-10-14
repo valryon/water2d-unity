@@ -1,47 +1,45 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# ===================================== #
+# Unity generated                       #
+# ===================================== #
 
-# Folder config file
-Desktop.ini
+Temp/
+Obj/
+UnityGenerated/
+Library/
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+obj/
+bin/
+ExportedObj/
+*.svd
+*.userprefs
+*.pidb
+*.suo
+*.user
+*.unityproj
+*.booproj
+*.csproj
+*.sln
 
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
+# ===================================== #
+# OS generated                          #
+# ===================================== #
 
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
+.DS_Store?
 ._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
 .Spotlight-V100
-.TemporaryItems
 .Trashes
-.VolumeIcon.icns
+ehthumbs.db
+Thumbs.db
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# ===================================== #
+# Sublime                               #
+# ===================================== #
+
+*.sublime-*
+!*.sublime-project
+
