@@ -12,7 +12,7 @@ Category {
 	SubShader {
 
 		// This pass grabs the screen behind the object into a texture.
-		// We can access the result in the next pass as _GrabTexture
+		// We can access the result in the next pass as _BackgroundTex
 		GrabPass { "_BackgroundTex" }
 		
 		// Main pass: Take the texture grabbed above and use the bumpmap to perturb it
