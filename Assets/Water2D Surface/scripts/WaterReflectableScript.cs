@@ -17,7 +17,7 @@ public class WaterReflectableScript : MonoBehaviour
   public int spriteLayerOrder = -5;
 
   private SpriteRenderer spriteSource;
-  private SpriteRenderer sprite;
+  private SpriteRenderer spriteRenderer;
 
   #endregion
 
@@ -29,20 +29,20 @@ public class WaterReflectableScript : MonoBehaviour
     reflectGo.transform.parent = this.transform;
     reflectGo.transform.localPosition = localPosition;
     reflectGo.transform.localRotation = Quaternion.Euler(localRotation);
-    reflectGo.transform.localScale = new Vector3(reflectGo.transform.localScale.x * -1, reflectGo.transform.localScale.y, reflectGo.transform.localScale.z);
+    reflectGo.transform.localScale = new Vector3(reflectGo.transform.localScale.x, reflectGo.transform.localScale.y, reflectGo.transform.localScale.z);
 
-    sprite = reflectGo.AddComponent<SpriteRenderer>();
-    sprite.sortingLayerName = spriteLayer;
-    sprite.sortingOrder = spriteLayerOrder;
-
+    spriteRenderer = reflectGo.AddComponent<SpriteRenderer>();
+    spriteRenderer.sortingLayerName = spriteLayer;
+    spriteRenderer.sortingOrder = spriteLayerOrder;
+    
     spriteSource = GetComponent<SpriteRenderer>();
   }
 
   void OnDestroy()
   {
-    if (sprite != null)
+    if (spriteRenderer != null)
     {
-      Destroy(sprite.gameObject);
+      Destroy(spriteRenderer.gameObject);
     }
   }
 
@@ -52,6 +52,10 @@ public class WaterReflectableScript : MonoBehaviour
     {
       sprite.sprite = spriteSource.sprite;
       sprite.color = spriteSource.color;
+        spriteRenderer.sprite = sprite;
+      spriteRenderer.flipX = spriteSource.flipX;
+      spriteRenderer.flipY = spriteSource.flipY;
+      spriteRenderer.color = spriteSource.color;
     }
   }
 
