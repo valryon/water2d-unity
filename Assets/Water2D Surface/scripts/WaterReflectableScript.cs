@@ -13,6 +13,8 @@ public class WaterReflectableScript : MonoBehaviour
   [Header("Reflect properties")]
   public Vector3 localPosition = new Vector3(0, -0.25f, 0);
   public Vector3 localRotation = new Vector3(0, 0, -180);
+  [Tooltip("Optionnal: force the reflected sprite. If null it will be a copy of the source.")]
+  public Sprite sprite;
   public string spriteLayer = "Default";
   public int spriteLayerOrder = -5;
 
@@ -50,9 +52,14 @@ public class WaterReflectableScript : MonoBehaviour
   {
     if (spriteSource != null)
     {
-      sprite.sprite = spriteSource.sprite;
-      sprite.color = spriteSource.color;
+      if (sprite == null)
+      {
+        spriteRenderer.sprite = spriteSource.sprite;
+      }
+      else
+      {
         spriteRenderer.sprite = sprite;
+      }
       spriteRenderer.flipX = spriteSource.flipX;
       spriteRenderer.flipY = spriteSource.flipY;
       spriteRenderer.color = spriteSource.color;
